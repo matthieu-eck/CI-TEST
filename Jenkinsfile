@@ -11,5 +11,10 @@ pipeline {
         echo 'Building Container'
       }
     }
+    stage('Sleep') {
+      steps {
+        input 'Stop container ?'
+      }
+    }
   }
 }
