@@ -7,11 +7,20 @@ pipeline {
   }
   stages {
     stage('Hello') {
-      steps {
-        echo 'Hello World'
+      parallel {
+        stage('Hello') {
+          steps {
+            echo 'Hello World'
+          }
+        }
+        stage('Test') {
+          steps {
+            input 'Choose'
+          }
+        }
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         sh './jenkins/scripts/test.sh'
       }
