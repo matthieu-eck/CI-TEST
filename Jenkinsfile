@@ -6,23 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Hello') {
-      parallel {
-        stage('Hello') {
-          steps {
-            echo 'Hello World'
-          }
-        }
-        stage('Test') {
-          steps {
-            input 'Choose'
-          }
-        }
-      }
-    }
-    stage('error') {
+    stage('Build') {
       steps {
-        sh './jenkins/scripts/test.sh'
+        echo 'Building Container'
       }
     }
   }
