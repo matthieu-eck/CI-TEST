@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
+        git(url: 'https://github.com/matthieu-eck/CI-TEST', branch: 'master')
       }
     }
     stage('Npm Install') {
