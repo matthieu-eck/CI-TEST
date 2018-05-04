@@ -21,5 +21,10 @@ nohup node /poc/main.js &
         input 'Stop container ?'
       }
     }
+    stage('Remove proxy') {
+      steps {
+        sh 'bash ./jenkins/scripts/remove-reverse.sh demo.test'
+      }
+    }
   }
 }
