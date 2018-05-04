@@ -15,7 +15,7 @@ pipeline {
       steps {
         sh '''set -x
 env
-bash ./jenkins/scripts/create-reverse.sh demo.test 35000
+bash ./jenkins/scripts/create-reverse.sh demo.test2 35000
 nohup node /poc/main.js &
 '''
         input 'Stop container ?'
@@ -23,7 +23,7 @@ nohup node /poc/main.js &
     }
     stage('Remove proxy') {
       steps {
-        sh 'bash ./jenkins/scripts/remove-reverse.sh demo.test'
+        sh 'bash ./jenkins/scripts/remove-reverse.sh demo.test2'
       }
     }
   }
