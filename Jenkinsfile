@@ -13,6 +13,7 @@ pipeline {
     }
     stage('Sleep') {
       steps {
+        sh './jenkins/scripts/get-ip.shsh'
         input 'Stop container ?'
       }
     }
