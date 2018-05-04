@@ -13,8 +13,11 @@ pipeline {
     }
     stage('Sleep') {
       steps {
-        sh '''bash ./jenkins/scripts/get-ip.sh
-node /poc/main.js'''
+        sh '''set -x
+env
+bash ./jenkins/scripts/create-reverse.sh demo.test 35000
+nohup node /poc/main.js &
+'''
         input 'Stop container ?'
       }
     }
