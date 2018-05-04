@@ -11,5 +11,10 @@ pipeline {
         echo 'Hello World'
       }
     }
+    stage('') {
+      steps {
+        sh './jenkins/scripts/test.sh'
+      }
+    }
   }
 }
