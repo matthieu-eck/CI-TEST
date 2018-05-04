@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'MyDockerFile'
-    }
-
-  }
+  agent none
   stages {
-    stage('Testing') {
+    stage('Script') {
       steps {
-        sh 'echo "hello"'
+        echo 'Hello'
       }
     }
   }
