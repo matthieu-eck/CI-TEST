@@ -17,4 +17,7 @@ pipeline {
       }
     }
   }
+  environment {
+    net = 'host'
+  }
 }
