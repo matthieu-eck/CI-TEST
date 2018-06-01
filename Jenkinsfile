@@ -16,8 +16,9 @@ pipeline {
       steps {
         sh '''set -x
 env
-
+echo $secret
 bash ./jenkins/scripts/create-reverse.sh $BUILD_TAG.demo $secret
+
 nohup node /poc/main.js &
 '''
         input 'Stop container ?'
