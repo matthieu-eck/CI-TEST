@@ -1,5 +1,11 @@
-URL=$1
+#!/bin/sh
+EMAIL=$1
 IP=$2
+URL=$3
+TOKEN=$4
+ZONE_ID=$5
+
+
 curl -X POST "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records" \
      -H "X-Auth-Email: $EMAIL" \
      -H "X-Auth-Key: $TOKEN" \
