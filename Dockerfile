@@ -57,4 +57,4 @@ RUN npm i -g pm2
 
 COPY /poc /poc
 CMD [ "pm2-docker", "start", "/poc/main.js" ]
-EXPOSE [ $PORT ]
+EXPOSE $PORT:35000
