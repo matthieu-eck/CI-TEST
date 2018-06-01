@@ -1,5 +1,6 @@
 FROM buildpack-deps:jessie
-#ENV PORT $PORT
+ENV PORT=$PORT
+
 
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
@@ -57,4 +58,4 @@ RUN npm i -g pm2
 
 COPY /poc /poc
 CMD [ "pm2-docker", "start", "/poc/main.js" ]
-#EXPOSE $PORT:35000
+EXPOSE $PORT:35000
