@@ -28,4 +28,7 @@ nohup node /poc/main.js &
       }
     }
   }
+  environment {
+    name = '$BUILD_TAG'
+  }
 }
