@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building Container'
+        build 'get-crendentials'
       }
     }
     stage('Sleep') {
