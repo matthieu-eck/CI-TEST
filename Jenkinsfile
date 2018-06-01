@@ -29,6 +29,6 @@ nohup node /poc/main.js &
     }
   }
   environment {
-    name = '$BUILD_TAG'
+    PORT = '35123'
   }
 }
